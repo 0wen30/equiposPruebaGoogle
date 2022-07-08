@@ -1,4 +1,3 @@
-import 'dotenv/config';
 import express from "express";
 import * as url from 'url';
 import { Ruta } from './rutas/equipos.rutas.js';
@@ -14,20 +13,20 @@ app.use("/api",Ruta);
 app.use(express.static("public"));
 
 app.get("/admin",(req,res)=>{
-    res.sendFile(__dirname + "public\\uno.html");
+    res.sendFile(__dirname + "public/uno.html");
 });
 
 app.get("/user",(req,res)=>{
-    res.sendFile(__dirname + "public\\dos.html");
+    res.sendFile(__dirname + "public/dos.html");
 });
 
 app.get("*",(req,res)=>{
-    res.sendFile(__dirname + "public\\404.html");
+    res.sendFile(__dirname + "public/404.html");
 });
 
-app.listen(process.env.PORT,()=>{
+app.listen(8080,()=>{
     console.clear();
-    console.log(`Running in Port ${process.env.PORT}`)
+    console.log(`Running in Port 8080`)
 });
 
 
